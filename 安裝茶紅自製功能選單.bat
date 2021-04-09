@@ -15,7 +15,7 @@ xcopy C:\"Program Files (x86)"\teablacklist\Minecraft.exe C:\teablacklist\ /h /y
 @reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\teablack_cmd_list" /v DisplayIcon /t REG_SZ /d "C:\Program Files (x86)\teablacklist\茶紅自製功能選單.ico " /f
 
 copy C:\"Program Files (x86)"\teablacklist\.data\其他工具包\sed.exe C:\windows
-copy C:\"Program Files (x86)"\teablacklist\.data\startone\執行茶紅自製功能選單.cmd C:\Users\"All Users"\桌面\
+copy C:\"Program Files (x86)"\teablacklist\.data\startone\"茶紅自製功能選單.lnk" %userprofile%\Desktop\
 echo 系統安裝完成
 chcp 65001
 echo.
