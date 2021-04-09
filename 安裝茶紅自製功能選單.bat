@@ -1,6 +1,7 @@
 @echo off
 @chcp 65001
 if not "%1"=="am_admin" (powershell start -verb runas '%0' am_admin & exit /b)
+chcp 65001
 echo 記得先解壓縮安裝包喲！(若有錯誤就是你沒有解壓縮)
 
 xcopy %~dp0teablacklist C:\"Program Files (x86)"\teablacklist /h /y /i /e /v
