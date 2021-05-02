@@ -1,8 +1,8 @@
-title ¯ù¬õ¦Û»s¦h¥\¯à¿ï³æ¸É¤B¥]__¤w¦w¸Ëªº¤u¨ã¥]
+title èŒ¶ç´…è‡ªè£½å¤šåŠŸèƒ½é¸å–®__å·²å®‰è£çš„å·¥å…·åŒ…
 
 @echo off
 
-@chcp 950
+@chcp 65001
 
 echo.
 echo.
@@ -12,10 +12,10 @@ type C:\"Program Files (x86)"\teablacklist\.data\installedcontent.tealist
 echo.
 echo.
 
-set /p ask=¿ï¾Ü¥\¯à¡G
+set /p ask=é¸æ“‡åŠŸèƒ½ï¼š
 
-if "%ask%"=="0" start C:\"Program Files (x86)"\teablacklist\¯ù¬õ¦Û»s¥\¯à¿ï³æ.bat&exit
+if "%ask%"=="0" start C:\"Program Files (x86)"\teablacklist\èŒ¶ç´…è‡ªè£½åŠŸèƒ½é¸å–®.bat&exit
 if "%ask%"=="1" start C:\"Program Files (x86)"\teablacklist\Temp\Office2019\setup.exe
 if "%ask%"=="2" start C:\"Program Files (x86)"\teablacklist\Temp\Office2007\setup.exe
 if "%ask%"=="3" start C:\"Program Files (x86)"\teablacklist\.data\"Microsoft Activation Scripts.cmd"
-if "%ask%"=="4" start C:\"Progarm Files (x86)"\teablacklist\.data\Run_Minecraft_Server.cmd
+if "%ask%"=="4" start C:\"Progarm Files (x86)"\teablacklist\.data\è¨˜æ†¶é«”é è¼‰å…¥è¨­å®šç¨‹å¼.exe

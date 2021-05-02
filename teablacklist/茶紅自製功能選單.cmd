@@ -1,63 +1,41 @@
-@chcp 950
-
-@title ¯ù¬õ¦Û»s¦h¥\¯à¿ï³æ¸É¤B¥]
-
 @echo off
+@chcp 65001
+@title èŒ¶ç´…è‡ªè£½å¤šåŠŸèƒ½é¸å–®
+set dir=C:\"Program Files (x86)"\teablacklist
 
 
 echo.
 echo.
-
-echo ***¨Ï¥Î¼Æ¦rÁä¿ï¨ú¶µ¥Ø***
-
+echo ***ä½¿ç”¨æ•¸å­—éµé¸å–é …ç›®***
 echo.
-
 echo enter the debug mode (only for developers)
-
 echo.
-
-echo 0. ¨ä¥L¤w¦w¸Ëªº¤u¨ã¥]
-
-echo 1. ¨t²ÎÃö¾÷»P­«·s±Ò°Êµ¥
-
-echo 2. ¨t²Î¥\¯à½Õ¾ã¤Î½T»{
-
-echo 3. ¶}±ÒMineCraft»P¼Ò²Õ¸ê®Æ§¨
-
-echo 4. ¶}±Ò±`¥Î¨t²ÎÀ³¥Î
-
-echo 5. ²M²z¨t²Î§Ö¨úÀÉ®×
-
+echo 0. å…¶ä»–å·²å®‰è£çš„å·¥å…·åŒ… 
+echo 1. ç³»çµ±é—œæ©Ÿèˆ‡é‡æ–°å•Ÿå‹•ç­‰ 
+echo 2. ç³»çµ±åŠŸèƒ½èª¿æ•´åŠç¢ºèª 
+echo 3. é–‹å•Ÿå¸¸ç”¨ç³»çµ±æ‡‰ç”¨ 
+echo 4. æ¸…ç†ç³»çµ±å¿«å–æª”æ¡ˆ 
 echo.
+set /p ask=é¸æ“‡åŠŸèƒ½ï¼š
 
-set /p ask=¿ï¾Ü¥\¯à¡G
-
-if "%ask%"=="debug" start C:\"Program Files (x86)"\teablacklist\.data\debug.bat
-
-if "%ask%"=="0" start C:\"Program Files (x86)"\teablacklist\.data\installed.bat
-
-if "%ask%"=="1" echo ¤l¿ï³æ01 &echo 1. Ãö¾÷&echo 2. ­«·s±Ò°Ê&set /p ask2=¿ï¾Ü¤l01¥\¯à¡G
-
-if "%ask%"=="2" echo ------------------------------------------------------------------ &echo 1. ¦Û°Ê¿ï¨ú Hyper-V (»İ­«±Ò) &echo 2. Ãö³¬ Hyper-V ªA°È (»İ­«±Ò) &echo 3. ¶}±Ò¤u¨ã¦CªºÃö¾÷¿ï¶µ&echo 4. Ãö³¬¤u¨ã¦CªºÃö¾÷¿ï¶µ &echo 5. ³Æ¥÷ÅX°Êµ{¦¡&echo 6. ÁÙ­ìÅX°Êµ{¦¡ &set /p ask2=¿ï¾Ü¤l02¥\¯à¡G
-
-if "%ask%"=="3" start C:\"Program Files (x86)"\teablacklist\Minecraft.exe&cd %appdata%\.minecraft\&start .
-
-if "%ask%"=="4" echo ------------------------------------------------------------------ &echo ¤l¿ï³æ05¡G &echo 1. ¶}±Ò¤¤¤å¿é¤Jªk &set /p ask5=¿ï¾Ü¤l05¥\¯à¡G
-
-if "%ask%"=="5" start C:\"Program Files (x86)"\teablacklist\.data\CleanTempFile.bat
+if "%ask%"=="debug" start %dir%\.data\debug.bat
+if "%ask%"=="0" start %dir%\.data\installed.bat
+if "%ask%"=="1" echo å­é¸å–®01 &echo 1. é—œæ©Ÿ&echo 2. é‡æ–°å•Ÿå‹•&set /p ask2=é¸æ“‡å­01åŠŸèƒ½ï¼š
+if "%ask%"=="2" echo ------------------------------------------------------------------ &echo 1. è‡ªå‹•é¸å– Hyper-V (éœ€é‡å•Ÿ) &echo 2. é—œé–‰ Hyper-V æœå‹™ (éœ€é‡å•Ÿ) &echo 3. é–‹å•Ÿå·¥å…·åˆ—çš„é—œæ©Ÿé¸é …&echo 4. é—œé–‰å·¥å…·åˆ—çš„é—œæ©Ÿé¸é … &echo 5. å‚™ä»½é©…å‹•ç¨‹å¼&echo 6. é‚„åŸé©…å‹•ç¨‹å¼ &set /p ask2=é¸æ“‡å­02åŠŸèƒ½ï¼š
+if "%ask%"=="3" echo ------------------------------------------------------------------ &echo å­é¸å–®05ï¼š &echo 1. é–‹å•Ÿä¸­æ–‡è¼¸å…¥æ³• &set /p ask5=é¸æ“‡å­05åŠŸèƒ½ï¼š
+if "%ask%"=="4" start %dir%\.data\CleanTempFile.bat
 
 
 if "%ask1%"=="1" run shutdown
 if "%ask1%"=="2" run reboot
 
 
-
-if "%ask2%"=="1" run bcdedit /set hypervisorlaunchtype auto
-if "%ask2%"=="2" run bcdedit /set hypervisorlaunchtype off
-if "%ask2%"=="3" start C:\"Program Files (x86)"\teablacklist\.data\Ãö¾÷¿ï¶µ¶}.reg
-if "%ask2%"=="4" start C:\"Program Files (x86)"\teablacklist\.data\Ãö¾÷¿ï¶µÃö.reg
-if "%ask2%"=="5" start C:\"Program Files (x86)"\teablacklist\.data\BackupDrivers.bat
-if "%ask2%"=="6" start C:\"Program Files (x86)"\teablacklist\.data\RestoreDrivers.bat
+if "%ask2%"=="1" start %dir%\.data\Hyper-V\auto.bat
+if "%ask2%"=="2" start %dir%\.data\Hyper-V\off.bat
+if "%ask2%"=="3" start %dir%\.data\é—œæ©Ÿé¸é …é–‹.bat
+if "%ask2%"=="4" start %dir%\.data\é—œæ©Ÿé¸é …é—œ.bat
+if "%ask2%"=="5" start %dir%\.data\BackupDrivers.bat
+if "%ask2%"=="6" start %dir%\.data\RestoreDrivers.bat
 
 
 if "%ask5%"=="1" start C:\Windows\System32\ctfmon.exe

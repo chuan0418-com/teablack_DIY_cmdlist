@@ -1,5 +1,5 @@
 @echo off
-@chcp 950
+@chcp 65001
 
 if not "%1"=="am_admin" (powershell start -verb runas '%0' am_admin & exit /b)
 
