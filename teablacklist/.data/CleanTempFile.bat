@@ -1,9 +1,10 @@
 @echo off
 
-chcp 65001
+@chcp 65001
 if not "%1"=="am_admin" (powershell start -verb runas '%0' am_admin & exit /b)
 echo 正在清除系統垃圾檔案中，請稍候......
-del /f /s /q C:\茶紅自製多功能選單補丁包\Temp\Office2019
+
+md C:\茶紅自製多功能選單補丁包\Temp
 
 del /f /s /q %systemdrive%\*.tmp
 
